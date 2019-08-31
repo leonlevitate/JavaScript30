@@ -21,7 +21,7 @@
       //At this stage, doesn't know what type of data it is
       fetch(endpoint)
         .then(block => block.json())
-        .then(data => console.log(data));
+        .then(data => cities.push(...data));
     </script>
   </body>
 </html>
