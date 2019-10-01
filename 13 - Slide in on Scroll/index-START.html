@@ -244,11 +244,16 @@
         sliderImages.forEach(slideImage => {
           // halfway through the image
           const slideInAt =
-            window.scrollY + window.innerHeight - slideImage.height / 2;
+            window.scrollY + window.innerHeight - sliderImage.height / 2;
           // bottom of the image
           const imageBottom = sliderImage.offsetTop + sliderImage.height;
           const isHalfShown = slideInAT > sliderImage.offsetTop;
           const isNotScrolledPast = window.scrollY < imageBottom;
+          if (isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add("active");
+          } else {
+            sliderImage.classList.remove("active");
+          }
         });
       }
 
