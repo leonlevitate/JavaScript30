@@ -242,8 +242,13 @@
 
       function checkSlide(e) {
         sliderImages.forEach(slideImage => {
+          // halfway through the image
           const slideInAt =
             window.scrollY + window.innerHeight - slideImage.height / 2;
+          // bottom of the image
+          const imageBottom = sliderImage.offsetTop + sliderImage.height;
+          const isHalfShown = slideInAT > sliderImage.offsetTop;
+          const isNotScrolledPast = window.scrollY < imageBottom;
         });
       }
 
